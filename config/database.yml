@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: true
-  database: heroku_026f89a5a79749d
+  database: blue_develop
   pool: 5
-  username:
-  password:
+  username: root
+  password: "123"
   socket: /tmp/mysql.sock
