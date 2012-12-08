@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="span3">
+    <ul class="nav nav-list" data-offset-top="200" data-spy="affix">
+      <% ProductTypes.all.each do |product_type|  %>
+          <li><%= link_to product_type.name, "##{product_type.name}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="span9">
+    <% ProductTypes.all.each do |product_type| %>
+        <section id="<%= product_type.name %>">
+          <ul class="thumbnails">
+            <% @products.each do |product|%>
+                <% if product.product_type == product_type.id %>
+                    <li class="span4">
+                      <div class="thumbnail">
+                        <%= link_to cl_image_tag(product.picture), product %>
+                        <h3><%= product.name %></h3>
+                        <p><%= product.description %></p>
+                        <%= link_to "Add to cart" %>
+                      </div>
+                    </li>
+                <% end %>
+            <% end %>
+          </ul>
+        </section>
+    <% end %>
+  </div>
+</div>
+
+<script>
+
+</script>

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: huku3ibmb
+  api_key: '672527881988693'
+  api_secret: VUpyuLPAZDngntxUy7zyvgGxj6E
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: huku3ibmb
+  api_key: '672527881988693'
+  api_secret: VUpyuLPAZDngntxUy7zyvgGxj6E
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: huku3ibmb
+  api_key: '672527881988693'
+  api_secret: VUpyuLPAZDngntxUy7zyvgGxj6E
+  enhance_image_tag: true
+  static_image_support: false

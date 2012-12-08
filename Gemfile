@@ -29,6 +29,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+gem 'cloudinary'
 
 
 # To use ActiveModel has_secure_password
