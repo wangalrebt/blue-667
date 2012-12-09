@@ -1,14 +1,21 @@
 Blue::Application.routes.draw do
-  resources :products
 
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'products#index'
   end
-  root :to => 'home#index'
+
+  root :to => 'products#index'
+
   devise_for :users
+
   resources :users
 
+  resources :carts do
+    resource :carts_products
+  end
+
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

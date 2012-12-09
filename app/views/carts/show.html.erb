@@ -1,0 +1,27 @@
+<% carts_products = @cart.line_item %>
+<% if carts_products %>
+    <table>
+      <thead>
+      <tr>
+        <td></td>
+        <td>Name</td>
+        <td></td>
+      </tr>
+      </thead>
+      <% carts_products.each do |carts_product| %>
+          <tr>
+            <% product = carts_product.product %>
+            <td><div class="thumbnail"><%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale) %></div></td>
+            <td><%= product.name %><td>
+
+            <td><%= carts_product.quantity %></td>
+            <td><%= link_to 'edit', edit_cart_carts_products_path(carts_product) %></td>
+            <td></td>
+          </tr>
+      <% end %>
+
+    </table>
+<% end %>
+
+<%= link_to 'add more item', products_path %>
+

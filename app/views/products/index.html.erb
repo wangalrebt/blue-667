@@ -1,10 +1,16 @@
+
 <div class="row">
   <div class="span3">
-    <ul class="nav nav-list" data-offset-top="200" data-spy="affix">
-      <% ProductTypes.all.each do |product_type|  %>
-          <li><%= link_to product_type.name, "##{product_type.name}" %></li>
-      <% end %>
-    </ul>
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list" data-offset-top="200" data-spy="affix">
+        <li class="nav-header">Type</li>
+        <% ProductTypes.all.each do |product_type|  %>
+            <li><%= link_to product_type.name, "##{product_type.name}" %></li>
+        <% end %>
+        <li class="nav-header">Cart</li>
+        <%= link_to "Go to my cart", cart_path(@cart.id) %>
+      </ul>
+    </div>
   </div>
 
   <div class="span9">
@@ -18,7 +24,7 @@
                         <%= link_to cl_image_tag(product.picture), product %>
                         <h3><%= product.name %></h3>
                         <p><%= product.description %></p>
-                        <%= link_to "Add to cart" %>
+                        <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :products_id => product) %>
                       </div>
                     </li>
                 <% end %>

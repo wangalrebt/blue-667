@@ -1,11 +1,10 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
-
+  before_filter :get_cart
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -91,4 +90,10 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def get_cart
+    @cart = current_cart
+  end
+
 end

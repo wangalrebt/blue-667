@@ -35,6 +35,6 @@ product3 = Product.create! :name => "coca cola", :picture => "fsti9aopcqr7zw87hi
 puts "product create successful" << product3.name
 
 ProductTypes.create([
-                        {:name => 'pizza'},
-                        {:name => 'drink'}
+                        {:id => 1, :name => 'pizza'},
+                        {:id => 2, :name => 'drink'}
                     ])
