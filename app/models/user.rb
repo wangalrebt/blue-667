@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates_presence_of :email
   validates_uniqueness_of :email, :case_sensitive => false
+
+  has_many :addresses, :class_name => "UserAddress", :foreign_key => "user_id"
 end

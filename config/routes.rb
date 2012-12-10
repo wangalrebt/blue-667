@@ -1,6 +1,15 @@
 Blue::Application.routes.draw do
 
 
+  resources :specialists
+
+
+  resources :reservations
+
+
+  resources :orders
+
+
   authenticated :user do
     root :to => 'products#index'
   end
@@ -16,6 +25,8 @@ Blue::Application.routes.draw do
   end
 
   resources :products
+
+  get 'home/about_us'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

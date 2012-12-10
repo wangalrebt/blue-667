@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound
     if user_signed_in?
       user_id = current_user.id
-      return Cart.find_all_by_users_id(user_id).last
+      Cart.find_all_by_users_id(user_id).last
     end
     return new_cart(user_id)
   end

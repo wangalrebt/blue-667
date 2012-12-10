@@ -1,0 +1,14 @@
+<% provide :title, "Today Specialist" %>
+<b>Date:</b>
+<%= @specialist.date %>
+<% specialists_products = @specialist.specialists_products %>
+
+<table>
+  <% specialists_products.each do |specialists_product| %>
+      <tr>
+        <td><%= link_to cl_image_tag(specialists_product.product.picture, :width => 200, :height => 180, :crop => :scale), specialists_product.product %><td>
+        <td><%= specialists_product.product.name %></td>
+        <td><%= specialists_product.product.description %></td>
+      </tr>
+  <% end %>
+</table>

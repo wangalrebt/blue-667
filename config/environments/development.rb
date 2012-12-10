@@ -34,4 +34,11 @@ Blue::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::TrustCommerceGateway.new(
+        :login => 'TestMerchant',
+        :password => 'password')
+  end
 end

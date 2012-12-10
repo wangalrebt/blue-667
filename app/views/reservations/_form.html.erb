@@ -1,0 +1,23 @@
+<%= simple_form_for(@reservation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :start_date, :as => :string %>
+    <%= f.input :number_of_tables %>
+    <%= f.input :order_id %>
+    <%= f.input :name %>
+    <%= f.input :phone %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script>
+  $(function(){
+      $('#reservation_start_date').datepicker({"format":"yyyy-mm-dd"});
+
+  })
+</script>

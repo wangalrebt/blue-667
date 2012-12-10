@@ -1,0 +1,86 @@
+<% provide :title, "New Order" %>
+<%= simple_form_for @order, :html => {:class => 'form-horizontal'} do |f| %>
+    <%= f.error :base %>
+
+    <% user = current_user %>
+    <% if user %>
+        <% name = "#{user.first_name} #{user.last_name}" %>
+        <% if user.addresses.last %>
+            <% address = user.addresses.last %>
+            <% address1 = address.address1 %>
+            <% address2 = address.address2 %>
+            <% city = address.city %>
+            <% state = address.state %>
+            <% zip_code = address.zip %>
+        <% end %>
+    <% end %>
+    <div class="row">
+      <div class="span6">
+
+        <fieldset>
+          <legend>Billing address
+          </legend>
+          <%= f.input :name %>
+          <%= f.input :address1 %>
+          <%= f.input :address2 %>
+          <%= f.input :city %>
+          <%= f.input :state %>
+          <%= f.input :zip_code %>
+          <label for="same_as_mailing">Same as mailing address<input id="same_as_mailing" type="checkbox"></label>
+
+        </fieldset>
+      </div>
+      <div class="span6">
+        <%= f.simple_fields_for :user_address do |mailing_address| %>
+            <fieldset>
+              <legend>Mailing Address</legend>
+              <%= mailing_address.input :name, :input_html => {:value => name} %>
+              <%= mailing_address.input :address1, :input_html => {:value => address1} %>
+              <%= mailing_address.input :address2, :input_html => {:value => address2} %>
+              <%= mailing_address.input :city, :input_html => {:value => city} %>
+              <%= mailing_address.input :state, :input_html => {:value => state} %>
+              <%= mailing_address.input :zip, :input_html => {:value => zip_code} %>
+            </fieldset>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6 offset2">
+        <fieldset>
+          <legend>Credit Card</legend>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :card_number %>
+          <%= f.input :card_verification %>
+          <%= f.input :card_type %>
+          <%= f.input :card_expires_on, :as => :date, :order => [:month, :year], :add_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 10,  :discard_day => true %>
+        </fieldset>
+      </div>
+
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>
+<script>
+    $(function(){
+        $('#same_as_mailing').click(function(){
+            if($('#same_as_mailing').is(':checked')){
+                $('#order_name').val($('#order_user_address_attributes_name').val());
+                $('#order_address1').val($('#order_user_address_attributes_address1').val());
+                $('#order_address2').val($('#order_user_address_attributes_address2').val());
+                $('#order_city').val($('#order_user_address_attributes_city').val());
+                $('#order_state').val($('#order_user_address_attributes_state').val());
+                $('#order_zip_code').val($('#order_user_address_attributes_zip').val());
+            } else {
+                $('#order_name').val('');
+                $('#order_address1').val('');
+                $('#order_address2').val('');
+                $('#order_city').val('');
+                $('#order_state').val('');
+                $('#order_zip_code').val('');
+
+            }
+        })
+    })
+</script>

@@ -1,8 +1,8 @@
-
+<% provide :title, "HOME" %>
 <div class="row">
   <div class="span3">
     <div class="well sidebar-nav">
-      <ul class="nav nav-list" data-offset-top="200" data-spy="affix">
+      <ul class="nav nav-list" data-offset-top="200">
         <li class="nav-header">Type</li>
         <% ProductTypes.all.each do |product_type|  %>
             <li><%= link_to product_type.name, "##{product_type.name}" %></li>

@@ -1,0 +1,35 @@
+<% provide :title, "My Reservaton" %>
+
+<p>
+  <b>User:</b>
+  <%= @reservation.user_id %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @reservation.start_date %>
+</p>
+
+<p>
+  <b>Number of tables:</b>
+  <%= @reservation.number_of_tables %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @reservation.order_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @reservation.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @reservation.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

@@ -30,7 +30,8 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 gem 'cloudinary'
-
+gem 'activemerchant', :require => 'active_merchant'
+gem 'bootstrap-datepicker-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

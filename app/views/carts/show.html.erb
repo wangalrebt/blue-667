@@ -1,27 +1,40 @@
+<% provide :title, "My Cart" %>
 <% carts_products = @cart.line_item %>
-<% if carts_products %>
-    <table>
-      <thead>
-      <tr>
-        <td></td>
-        <td>Name</td>
-        <td></td>
-      </tr>
-      </thead>
-      <% carts_products.each do |carts_product| %>
+<div class="row">
+  <div class="span9">
+    <% if carts_products %>
+        <table>
+          <thead>
           <tr>
-            <% product = carts_product.product %>
-            <td><div class="thumbnail"><%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale) %></div></td>
-            <td><%= product.name %><td>
-
-            <td><%= carts_product.quantity %></td>
-            <td><%= link_to 'edit', edit_cart_carts_products_path(carts_product) %></td>
+            <td></td>
+            <td>Name</td>
             <td></td>
           </tr>
-      <% end %>
+          </thead>
+          <% carts_products.each do |carts_product| %>
+              <tr>
+                <% product = carts_product.product %>
+                <td><div class="thumbnail"><%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale) %></div></td>
+                <td><%= product.name %><td>
 
-    </table>
-<% end %>
+                <td><%= carts_product.quantity %></td>
+                <td><%= link_to 'edit', edit_cart_carts_products_path(carts_product) %></td>
+                <td></td>
+              </tr>
+          <% end %>
 
-<%= link_to 'add more item', products_path %>
+        </table>    <% end %>
 
+    <%= link_to 'add more item', products_path %>
+  </div>
+
+  <div class="span3">
+    <div class="well sidebar-nav" >
+      <ul class="nav nav-list">
+        <li><%= link_to 'Place Order', new_order_path %></li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -38,3 +38,5 @@ ProductTypes.create([
                         {:id => 1, :name => 'pizza'},
                         {:id => 2, :name => 'drink'}
                     ])
+
+OrderType.create([{:id => 1, :name => 'delivery'}, {:id => 2, :name => 'pick up'}])

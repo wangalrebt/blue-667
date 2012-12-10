@@ -5,7 +5,9 @@ class CartsProduct < ActiveRecord::Base
   belongs_to :product, :primary_key => "id", :foreign_key => "products_id"
   belongs_to :cart
 
-
+  def full_price
+    quantity * product.price
+  end
 
   private
 

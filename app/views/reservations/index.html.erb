@@ -1,0 +1,34 @@
+<% provide :title, "All Reservation" %>
+<h1>Listing reservations</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start date</th>
+    <th>Number of tables</th>
+    <th>Order</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reservations.each do |reservation| %>
+  <tr>
+    <td><%= reservation.user_id %></td>
+    <td><%= reservation.start_date %></td>
+    <td><%= reservation.number_of_tables %></td>
+    <td><%= reservation.order_id %></td>
+    <td><%= reservation.name %></td>
+    <td><%= reservation.phone %></td>
+    <td><%= link_to 'Show', reservation %></td>
+    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+    <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reservation', new_reservation_path %>

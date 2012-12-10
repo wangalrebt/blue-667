@@ -11,20 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209002035) do
+ActiveRecord::Schema.define(:version => 20121210211004) do
 
   create_table "carts", :force => true do |t|
     t.integer  "users_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "completed",  :default => false
   end
 
   create_table "carts_products", :force => true do |t|
     t.integer  "carts_id"
-    t.integer  "quantity"
+    t.integer  "quantity",    :default => 1
     t.integer  "products_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "order_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "cart_id"
+    t.integer  "order_type"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "completed",       :default => false
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
   end
 
   create_table "product_types", :force => true do |t|
@@ -43,6 +64,17 @@ ActiveRecord::Schema.define(:version => 20121209002035) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "reservations", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "start_date"
+    t.integer  "number_of_tables"
+    t.integer  "order_id"
+    t.string   "name"
+    t.integer  "phone"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -53,6 +85,33 @@ ActiveRecord::Schema.define(:version => 20121209002035) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "specialists", :force => true do |t|
+    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "specialists_products", :force => true do |t|
+    t.integer  "product_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "specialist_id"
+  end
+
+  create_table "user_addresses", :force => true do |t|
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "address_type"
+    t.integer  "user_id"
+    t.integer  "order_id"
+    t.string   "name"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
