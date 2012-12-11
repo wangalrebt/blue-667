@@ -1,13 +1,11 @@
-<%= simple_form_for(@reservation) do |f| %>
+<%= simple_form_for(@reservation, :html => {:class => 'form-signin'}, :defaults => { :input_html => { :class => 'input-block-level' }}) do |f| %>
   <%= f.error_notification %>
-
+  <h2 class="form-signin-heading"><%= "#{controller.action_name.capitalize} Reservation" %></h2>
   <div class="form-inputs">
-    <%= f.input :user_id %>
     <%= f.input :start_date, :as => :string %>
-    <%= f.input :number_of_tables %>
-    <%= f.input :order_id %>
+    <%= f.input :number_of_tables, :as => :string %>
     <%= f.input :name %>
-    <%= f.input :phone %>
+    <%= f.input :phone, :as => :string %>
   </div>
 
   <div class="form-actions">
@@ -18,6 +16,5 @@
 <script>
   $(function(){
       $('#reservation_start_date').datepicker({"format":"yyyy-mm-dd"});
-
   })
 </script>

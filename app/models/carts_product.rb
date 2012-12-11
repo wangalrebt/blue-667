@@ -3,7 +3,7 @@ class CartsProduct < ActiveRecord::Base
   before_create :set_default
 
   belongs_to :product, :primary_key => "id", :foreign_key => "products_id"
-  belongs_to :cart
+  belongs_to :cart, :foreign_key => "carts_id"
 
   def full_price
     quantity * product.price
