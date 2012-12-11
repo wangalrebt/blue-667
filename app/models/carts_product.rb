@@ -1,12 +1,10 @@
 class CartsProduct < ActiveRecord::Base
-  attr_accessible :carts_id, :products_id, :quantity
-  before_create :set_default
-
-  belongs_to :product, :primary_key => "id", :foreign_key => "products_id"
-  belongs_to :cart, :foreign_key => "carts_id"
+  attr_accessible :cart_id, :product_id, :quantity
+  belongs_to :cart, :foreign_key => "product_id"
+  belongs_to :product, :foreign_key => "product_id"
 
   def full_price
-    quantity * product.price
+    (quantity * product.price).round
   end
 
   private
@@ -14,6 +12,4 @@ class CartsProduct < ActiveRecord::Base
   def set_default
     self.quantity = 1 unless self.quantity
   end
-
-
 end

@@ -1,6 +1,6 @@
 class Cart < ActiveRecord::Base
   attr_accessible :users_id
-  has_many :carts_products, :foreign_key => "carts_id", :class_name => "CartsProduct", :dependent => :destroy
+  has_many :carts_products, :foreign_key => "cart_id", :class_name => "CartsProduct", :dependent => :destroy
   has_many :products, :through => :carts_products
   has_one :order
   has_one :reservation, :foreign_key => :cart_id

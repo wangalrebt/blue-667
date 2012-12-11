@@ -25,7 +25,7 @@
                         <%= link_to cl_image_tag(product.picture, :width => 300, :height => 200), product %>
                         <h3><%= product.name %></h3>
                         <p><%= product.description %></p>
-                        <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :products_id => product), :class => "btn btn-large btn-success" %>
+                        <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :product_id => product.id), :class => "btn btn-large btn-success" %>
                       </div>
                     </li>
                 <% end %>

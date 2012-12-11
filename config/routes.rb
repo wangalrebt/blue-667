@@ -1,6 +1,8 @@
 Blue::Application.routes.draw do
 
 
+
+
   resources :specialists
 
 
@@ -21,7 +23,8 @@ Blue::Application.routes.draw do
   resources :users
 
   resources :carts do
-    resource :carts_products
+    resources :carts_products
+
   end
 
   resources :products

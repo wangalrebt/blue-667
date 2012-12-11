@@ -41,11 +41,10 @@ class CartsProductsController < ApplicationController
   # POST /carts_products
   # POST /carts_products.json
   def create
-    @carts_product = @cart.carts_products.build(:products_id => params[:products_id].to_i)
-
+    @carts_product =  @cart.carts_products.build(:product_id => params[:product_id].to_i)
     respond_to do |format|
       if @carts_product.save
-        format.html { redirect_to :back, notice: 'Carts product was successfully created.' }
+        format.html { redirect_to @cart, notice: 'Carts product was successfully created.' }
         format.json { render json: @carts_product, status: :created, location: @carts_product }
       else
         format.html { render action: "new" }
@@ -61,7 +60,7 @@ class CartsProductsController < ApplicationController
 
     respond_to do |format|
       if @carts_product.update_attributes(params[:carts_product])
-        format.html { redirect_to :back, notice: 'Carts product was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Carts product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,14 +76,13 @@ class CartsProductsController < ApplicationController
     @carts_product.destroy
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to @cart }
       format.json { head :no_content }
     end
   end
 
   private
-
   def get_cart
-    @cart = current_cart
+    @cart = Cart.find(params[:cart_id])
   end
 end

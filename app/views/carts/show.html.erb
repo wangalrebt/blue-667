@@ -1,38 +1,43 @@
 <% provide :title, "My Cart" %>
-<% carts_products = @cart.line_item %>
+<% carts_products = @cart.carts_products %>
 <div class="row">
-  <div class="span9">
+  <div class="span8">
     <% if carts_products %>
-        <table>
-          <thead>
-          <tr>
-            <td></td>
-            <td>Name</td>
-            <td></td>
-          </tr>
-          </thead>
-          <% carts_products.each do |carts_product| %>
-              <tr>
-                <% product = carts_product.product %>
-                <td><div class="thumbnail"><%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale) %></div></td>
-                <td><%= product.name %><td>
+        <% carts_products.each do |carts_product| %>
+            <% product = carts_product.product %>
 
-                <td><%= carts_product.quantity %></td>
-                <td><%= link_to 'edit', edit_cart_carts_products_path(carts_product) %></td>
-                <td></td>
-              </tr>
-          <% end %>
+            <div class="media">
+              <%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale, :class => "media-object pull-left") %>
+              <div class="media-body">
+                <h2 class="media-heading"><%= product.name %></h2>
+                <p>Quantity: <%= carts_product.quantity %></p>
+                <div class="media">
+                    <%= link_to 'DELETE', [@cart, carts_product], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning" %>
+                    <%= simple_form_for([@cart,carts_product], :html => {:class => "form-inline"}) do |f| %>
+                        <%= f.input :quantity, :collection => 1..5 %>
+                        <%= f.submit "update", :class => "btn" %>
+                    <% end %>
+                </div>
+              </div>
+            </div>
+        <% end %>
 
-        </table>    <% end %>
+    <% end %>
 
-    <%= link_to 'add more item', products_path %>
   </div>
 
-  <div class="span3">
+  <div class="span4">
     <div class="well sidebar-nav" >
       <ul class="nav nav-list">
-        <li><%= link_to 'Place Order', new_order_path %></li>
-
+        <li>
+          <%= link_to 'Place Order', new_order_path %>
+        </li>
+        <li>
+          <%= link_to 'Continuing Shopping', products_path %>
+        </li>
+        <li>
+          <%= "Total Order #{@cart.total_price}" %>
+        </li>
       </ul>
     </div>
 
