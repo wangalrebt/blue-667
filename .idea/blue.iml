@@ -16,6 +16,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="google_visualization_api" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v3.2.9, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v3.2.9, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="active_utils (v1.0.5, RVM: ruby-1.9.3-p327) [gem]" level="application" />

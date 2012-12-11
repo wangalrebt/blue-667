@@ -1,4 +1,3 @@
 class OrderType < ActiveRecord::Base
-  attr_accessible :name
-  belongs_to :order
+  has_many :orders, :foreign_key => "order_type_id"
 end

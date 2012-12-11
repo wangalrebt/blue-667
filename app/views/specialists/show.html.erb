@@ -1,14 +1,29 @@
 <% provide :title, "Today Specialist" %>
-<b>Date:</b>
-<%= @specialist.date %>
+<h1>Today Special</h1>
 <% specialists_products = @specialist.specialists_products %>
 
-<table>
-  <% specialists_products.each do |specialists_product| %>
-      <tr>
-        <td><%= link_to cl_image_tag(specialists_product.product.picture, :width => 200, :height => 180, :crop => :scale), specialists_product.product %><td>
-        <td><%= specialists_product.product.name %></td>
-        <td><%= specialists_product.product.description %></td>
-      </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8">
+        <% specialists_products.each do |specialists_product| %>
+            <% product = specialists_product.product %>
+
+            <div class="media">
+              <%= link_to cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale, :class => "media-object pull-left"), product_path(product) %>
+              <div class="media-body">
+                <h2 class="media-heading"><%= product.name %></h2>
+                <%= product.price %>
+                <div class="media">
+                  <%= form_tag "/carts/#{@cart.id}/carts_products", :method => :post do %>
+                      <%= hidden_field_tag :product_id, product.id %>
+                      <%= select_tag :quantity, options_for_select(1..5) %>
+                      <%= submit_tag "Add To Cart", :class => "btn btn-success btn-large" %>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+
+  </div>
+</div>

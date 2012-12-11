@@ -41,7 +41,9 @@ class CartsProductsController < ApplicationController
   # POST /carts_products
   # POST /carts_products.json
   def create
-    @carts_product =  @cart.carts_products.build(:product_id => params[:product_id].to_i)
+    @carts_product =  @cart.carts_products.build(:product_id => params[:product_id].to_i, )
+    @carts_product.product_id = params[:product_id]
+    @carts_product.quantity = params[:quantity]
     respond_to do |format|
       if @carts_product.save
         format.html { redirect_to @cart, notice: 'Carts product was successfully created.' }

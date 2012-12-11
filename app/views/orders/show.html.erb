@@ -5,38 +5,43 @@
         You order has completed
     <% else %>
 
-        <% carts_products = @order.cart.line_item %>
+        <% carts_products = @order.cart.carts_products %>
         <% if carts_products %>
-            <table>
-              <thead>
-              <tr>
-                <td></td>
-                <td>Name</td>
-                <td></td>
-              </tr>
-              </thead>
-              <% carts_products.each do |carts_product| %>
-                  <tr>
-                    <% product = carts_product.product %>
-                    <td><div class="thumbnail"><%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale) %></div></td>
-                    <td><%= product.name %><td>
+            <% carts_products.each do |carts_product| %>
+                <% product = carts_product.product %>
+                <div class="media">
+                  <%= link_to cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale, :class => "media-object pull-left"), product_path(product) %>
+                  <div class="media-body">
+                    <h2 class="media-heading"><%= product.name %></h2>
+                    <p>Quantity: <%= carts_product.quantity %></p>
+                    <div class="media">
+                      <p>Total Price</p><%= carts_product.full_price %>
 
-                    <td><%= carts_product.quantity %></td>
-                    <td><%= link_to 'edit', edit_cart_carts_products_path(carts_product) %></td>
-                    <td></td>
-                  </tr>
-              <% end %>
+                    </div>
+                  </div>
+                </div>
 
-            </table>    <% end %>
+            <% end %>
 
-        <%= link_to 'add more item', products_path %>
+        <% end %>
+
     <% end %>
   </div>
 
   <div class="span3">
     <div class="well sidebar-nav" >
       <ul class="nav nav-list">
-         <li><%= link_to 'check out', edit_order_path %></li>
+        <li class="nav-header">Order Type</li>
+
+        <li><%= @order.order_type.name  %></li>
+        <li class="nav-header">Total Money</li>
+        <li><%= @order.cart.total_price %></li>
+        <li class="nav-header">Deliver Address</li>
+        <% address=@order.user_address %>
+        <li>Address1: <%= address.address1 %></li>
+        <li>Address2: <%= address.address2 %></li>
+        <li>City: <%= address.city %></li>
+        <li>State: <%= address.state %></li>
       </ul>
     </div>
   </div>

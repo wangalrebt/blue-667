@@ -1,34 +1,45 @@
 <% provide :title, "All Reservation" %>
-<h1>Listing reservations</h1>
+<h1>All Reservation</h1>
+<div id="reservation_table"></div>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script>
+    var options_keyWords = {
+        'showRowNumber':false,
+        'allowHtml':true
+    };
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Start date</th>
-    <th>Number of tables</th>
-    <th>Order</th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    google.load('visualization', '1.1', {'packages':['table']});
+    google.setOnLoadCallback(drawTable);
 
-<% @reservations.each do |reservation| %>
-  <tr>
-    <td><%= reservation.user_id %></td>
-    <td><%= reservation.start_date %></td>
-    <td><%= reservation.number_of_tables %></td>
-    <td><%= reservation.order_id %></td>
-    <td><%= reservation.name %></td>
-    <td><%= reservation.phone %></td>
-    <td><%= link_to 'Show', reservation %></td>
-    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-    <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    function drawTable() {
 
-<br />
 
-<%= link_to 'New Reservation', new_reservation_path %>
+        var data_table = new google.visualization.DataTable();
+        data_table.addColumn('string', 'NAME', 0);
+        data_table.addColumn('string', 'PHONE', 1);
+        data_table.addColumn('string', 'DATE', 2);
+        data_table.addColumn('string', 'NUMBER OF TABLES', 3);
+        data_table.addColumn('string', 'Edit', 4);
+        data_table.addColumn('string', 'Delete', 5);
+
+
+    <% @reservations.each do |reservations| %>
+        data_table.addRows([['<%= link_to reservations.name, reservations, :class => 'btn' %>',
+            "<%= reservations.phone %>", "<%= reservations.start_date %>","<%= reservations.number_of_tables %>",
+            '<%= link_to 'Edit', edit_reservation_path(reservations), :class => 'btn' %>',
+            '<%= link_to 'Destroy', reservations, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>']]);
+    <% end %>
+
+        var class_table = new google.visualization.Table(document.getElementById('reservation_table')) ;
+
+        data_table.sort(2)
+        var v = new google.visualization.DataView(data_table)
+
+        class_table.draw(v, options_keyWords);
+    }
+
+
+</script>
+
+
+

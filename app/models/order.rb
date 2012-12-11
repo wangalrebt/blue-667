@@ -1,14 +1,16 @@
 class Order < ActiveRecord::Base
-  has_one :order_type
+  attr_accessor :card_number, :card_verification, :address1, :address2, :city, :state, :zip_code, :name
+  attr_accessible :card_number, :card_verification, :card_type, :card_expires_on, :first_name, :last_name, :cart_id,
+                  :address1, :address2,:city, :state, :zip_code, :name, :user_address_attributes, :order_type_id, :user_id
 
+  belongs_to :order_type
   has_one :user_address, :foreign_key => "order_id"
   accepts_nested_attributes_for :user_address
-
+  belongs_to :user
   belongs_to :cart, :foreign_key => "cart_id", :primary_key => "id"
   validate :validate_card, :on => "create"
 
-  attr_accessor :card_number, :card_verification, :address1, :address2, :city, :state, :zip_code, :name
-  attr_accessible :card_number, :card_verification, :card_type, :card_expires_on, :first_name, :last_name, :cart_id, :address1, :address2,:city, :state, :zip_code, :name, :user_address_attributes
+
 
 
   def purchase

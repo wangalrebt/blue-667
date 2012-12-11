@@ -1,28 +1,74 @@
 <% provide :title, "All Orders" %>
 <h1>Listing orders</h1>
+<div id="dashboard_div">
+  <div id="filter_div"></div>
+  <div id="all_order"></div>
+</div>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script>
+    var options_keyWords = {
+        'showRowNumber':false,
+        'allowHtml':true
+    };
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Cart</th>
-    <th>Order type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    google.load('visualization', '1.0', {'packages':['controls', 'table']});
+    google.setOnLoadCallback(drawTable);
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.user_id %></td>
-    <td><%= order.cart_id %></td>
-    <td><%= order.order_type %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    function drawTable() {
 
-<br />
 
-<%= link_to 'New Order', new_order_path %>
+        var data_table = new google.visualization.DataTable();
+        data_table.addColumn('string', 'ORDER ID', 0);
+        data_table.addColumn('string', 'CART', 1);
+        data_table.addColumn('string', 'ORDER_TYPE', 2);
+        data_table.addColumn('string', 'Created_at', 3);
+
+        data_table.addColumn('string', 'Edit', 4);
+        data_table.addColumn('string', 'Delete', 5);
+
+
+    <% @orders.each do |order| %>
+        data_table.addRows([[
+            '<%= link_to order.id, order, :class => 'btn' %>',
+            '<%= link_to 'CART', order.cart, :class => 'btn' %>',
+            "<%= order.order_type.name %>",
+            "<%= order.created_at %>",
+            '<%= link_to 'Edit', edit_reservation_path(order), :class => 'btn' %>',
+            '<%= link_to 'DELETE', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>']]);
+    <% end %>
+
+        var class_table = new google.visualization.Table(document.getElementById('all_order')) ;
+
+        var categoryPicker = new google.visualization.ControlWrapper({
+            'controlType': 'CategoryFilter',
+            'containerId': 'filter_div',
+            'options': {
+                'filterColumnLabel': 'ORDER_TYPE',
+                'ui': {
+                    'labelStacking': 'vertical',
+                    'allowTyping': false,
+                    'allowMultiple': false
+                }
+            }
+        });
+
+        var table = new google.visualization.ChartWrapper({
+            'chartType': 'Table',
+            'containerId': 'all_order',
+            'options' :options_keyWords
+
+        });
+
+        data_table.sort(2);
+        new google.visualization.Dashboard(document.getElementById('dashboard_div')).
+                bind(categoryPicker, table).
+                draw(data_table);
+    }
+
+
+</script>
+
+
+
+
+

@@ -1,8 +1,9 @@
 class ReservationsController < ApplicationController
+  before_filter :get_cart, :only => [:new, :show]
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.order
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class ReservationsController < ApplicationController
     if user_signed_in?
       @reservation.user_id = current_user.id
     end
-    @reservation = current_cart
+    @reservation.cart_id = @cart
     respond_to do |format|
       if @reservation.save
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
@@ -82,5 +83,10 @@ class ReservationsController < ApplicationController
       format.html { redirect_to reservations_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def get_cart
+    @cart = current_cart
   end
 end

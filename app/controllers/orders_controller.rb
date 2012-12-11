@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  before_filter :get_cart, :only => [:new, :create]
   # GET /orders
   # GET /orders.json
   def index
@@ -48,12 +47,12 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        session[:cart_id] = nil
         if @order.purchase
-          format.html { redirect_to @order, notice: 'Order was successfully created.' }
+          session[:cart_id] = nil
+          format.html { redirect_to products_path, notice: 'Order was successfully created.' }
           format.json { render json: @order, status: :created, location: @order }
         else
-          format.html { render action: "new", notice: "Payment unsuccessful"}
+          format.html { render action: 'new', notice: "Payment unsuccessful"}
           format.json { head :no_content}
         end
 

@@ -15,6 +15,12 @@
         <% end %>
     <% end %>
     <div class="row">
+       <div class="controls">
+         <select class="select optional bootstrap-select" id="order_order_type" name="order[order_type_id]">
+           <option value=1>Deliver</option>
+           <option value=2>Pick up</option>
+         </select>
+       </div>
       <div class="span6">
 
         <fieldset>
@@ -27,10 +33,9 @@
           <%= f.input :state %>
           <%= f.input :zip_code %>
           <label for="same_as_mailing">Same as mailing address<input id="same_as_mailing" type="checkbox"></label>
-
         </fieldset>
       </div>
-      <div class="span6">
+      <div class="span6" id="mail_address">
         <%= f.simple_fields_for :user_address do |mailing_address| %>
             <fieldset>
               <legend>Mailing Address</legend>
@@ -82,5 +87,15 @@
 
             }
         })
+
+        $('#order_order_type').change(function(){
+            if($('#order_order_type').val() == 1){
+                $('#mail_address').show();
+            } else if ($('#order_order_type').val() == 2){
+                $('#mail_address').hide();
+
+            }
+
+        });
     })
 </script>

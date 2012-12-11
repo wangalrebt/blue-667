@@ -10,7 +10,11 @@
     <p>
       <%= @product.description %>
     </p>
-    <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :product_id => @product), :class => "btn btn-large btn-success" %>
+    <%= form_tag "/carts/#{@cart.id}/carts_products", :method => :post do %>
+        <%= hidden_field_tag :product_id, @product.id %>
+        <%= select_tag :quantity, options_for_select(1..5) %>
+        <%= submit_tag "Add To Cart", :class => "btn btn-success btn-large" %>
+    <% end %>
     <%= link_to "Continuing shopping", products_path, :class => "btn" %>
   </div>
 </div>

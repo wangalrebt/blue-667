@@ -1,4 +1,5 @@
 class SpecialistsController < ApplicationController
+  before_filter :get_cart
   # GET /specialists
   # GET /specialists.json
   def index
@@ -79,5 +80,10 @@ class SpecialistsController < ApplicationController
       format.html { redirect_to specialists_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def get_cart
+    @cart = current_cart
   end
 end

@@ -1,9 +1,9 @@
 <% provide :title, "All Specialist" %>
 <h1>Listing specialists</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Date</th>
+    <th>Special ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,10 +11,9 @@
 
 <% @specialists.each do |specialist| %>
   <tr>
-    <td><%= specialist.date %></td>
-    <td><%= link_to 'Show', specialist %></td>
-    <td><%= link_to 'Edit', edit_specialist_path(specialist) %></td>
-    <td><%= link_to 'Destroy', specialist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to specialist.id, specialist, :class => "btn" %></td>
+    <td><%= link_to 'Edit', edit_specialist_path(specialist), :class => 'btn' %></td>
+    <td><%= link_to 'DELETE', specialist, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
