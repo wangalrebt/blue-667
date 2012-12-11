@@ -10,7 +10,7 @@
     <p>
       <%= @product.description %>
     </p>
-    <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :products_id => @product), :class => "btn btn-large btn-success" %>
+    <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :product_id => @product), :class => "btn btn-large btn-success" %>
     <%= link_to "Continuing shopping", products_path, :class => "btn" %>
   </div>
 </div>
@@ -27,7 +27,7 @@
             signed: false,
             collectionMeta: {
                 articleId: articleId,
-                url: fyre.conv.load.makeCollectionUrl(),
+                url: fyre.conv.load.makeCollectionUrl()
             }
         }], function() {});
     }());

@@ -7,7 +7,7 @@
             <% product = carts_product.product %>
 
             <div class="media">
-              <%= cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale, :class => "media-object pull-left") %>
+              <%= link_to cl_image_tag(product.picture, :width => 200, :height => 180, :crop => :scale, :class => "media-object pull-left"), product_path(product) %>
               <div class="media-body">
                 <h2 class="media-heading"><%= product.name %></h2>
                 <p>Quantity: <%= carts_product.quantity %></p>
