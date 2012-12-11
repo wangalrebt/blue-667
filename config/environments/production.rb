@@ -65,9 +65,9 @@ Blue::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.after_initialize do
-    ActiveMerchant::Billing::Base.mode = :test
     ::GATEWAY = ActiveMerchant::Billing::TrustCommerceGateway.new(
         :login => 'TestMerchant',
-        :password => 'password')
+        :password => 'password',
+        :test => true )
   end
 end
