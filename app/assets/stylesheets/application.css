@@ -37,3 +37,15 @@
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;}

@@ -1,0 +1,15 @@
+<% provide :title, @user.first_name %>
+<div class="row">
+  <h1>Welcome <%= "#{@user.first_name}  #{@user.last_name}" %></h1>
+  <ul class="nav nav-tabs nav-stacked">
+    <li class="nav-header">My Order</li>
+
+    <% if @user.orders %>
+        <% orders = @user.orders %>
+        <% orders.each do |order| %>
+            <li><%= link_to 'MY ORDER', order %></li>
+        <% end %>
+    <% end %>
+    <li class="nav-header">My Address</li>
+  </ul>
+</div>

@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :addresses, :class_name => "UserAddress", :foreign_key => "user_id"
   has_many :orders
+  has_many :events
 end

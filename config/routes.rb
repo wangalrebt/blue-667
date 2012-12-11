@@ -3,6 +3,9 @@ Blue::Application.routes.draw do
 
 
 
+  resources :events
+
+
   resources :specialists
 
 

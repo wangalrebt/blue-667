@@ -45,6 +45,10 @@ class OrdersController < ApplicationController
     @order.cart_id = current_cart.id
     @order.ip_address = request.remote_ip
 
+    if user_signed_in?
+      @order.user_id = current_user.id
+    end
+
     respond_to do |format|
       if @order.save
         if @order.purchase

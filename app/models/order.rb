@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   accepts_nested_attributes_for :user_address
   belongs_to :user
   belongs_to :cart, :foreign_key => "cart_id", :primary_key => "id"
+  has_one :event
   validate :validate_card, :on => "create"
 
 

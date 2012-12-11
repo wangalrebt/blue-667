@@ -1,8 +1,11 @@
 class ReservationsController < ApplicationController
   before_filter :get_cart, :only => [:new, :show]
+  before_filter :authenticate_user!
+
   # GET /reservations
   # GET /reservations.json
   def index
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @reservations = Reservation.all
 
     respond_to do |format|

@@ -4,6 +4,9 @@
   <% if @cart %>
       <li><%= link_to 'SHOPPING CART', cart_path(@cart) %></li>
   <% end %>
+  <% if user_signed_in? %>
+      <li><%= link_to 'NEW EVENT', new_event_path %></li>
+  <% end %>
   <li><%= link_to 'RESERVATION', new_reservation_path %></li>
   <li><%= link_to 'ABOUT US', '/home/about_us' %></li>
   <li><%= link_to 'TODAY SPECIALIST', specialist_path(1) %></li>
@@ -21,6 +24,9 @@
   <% if user_signed_in? %>
       <li>
         <%= link_to('Edit account', edit_user_registration_path) %>
+      </li>
+      <li>
+        <%= link_to 'MY ACCOUNT', current_user %>
       </li>
       <% if current_user.has_role? :admin %>
           <li>
