@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all.order
+    @reservations = Reservation.all
 
     respond_to do |format|
       format.html # index.html.erb
