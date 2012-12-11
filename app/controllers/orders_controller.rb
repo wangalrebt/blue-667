@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!, :only => :index
+
   # GET /orders
   # GET /orders.json
   def index
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+
     @orders = Order.all
 
     respond_to do |format|
@@ -50,8 +54,9 @@ class OrdersController < ApplicationController
     end
 
     respond_to do |format|
-      if @order.save
-        if @order.purchase
+      if @order.purchase
+        if @order.save
+
           session[:cart_id] = nil
           format.html { redirect_to products_path, notice: 'Order was successfully created.' }
           format.json { render json: @order, status: :created, location: @order }
@@ -63,7 +68,7 @@ class OrdersController < ApplicationController
 
       else
         @cart = current_cart
-        format.html { render action: "new" }
+        format.html { render action: "new", notice: 'purchase Unsuccessful' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

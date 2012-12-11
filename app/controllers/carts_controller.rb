@@ -1,8 +1,10 @@
 class CartsController < ApplicationController
+  before_filter :authenticate_user!, :only => :index
   before_filter :get_cart, :only => [:new, :create]
   # GET /carts
   # GET /carts.json
   def index
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @carts = Cart.all
 
     respond_to do |format|

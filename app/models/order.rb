@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   belongs_to :cart, :foreign_key => "cart_id", :primary_key => "id"
   has_one :event
   validate :validate_card, :on => "create"
-
+  validates_presence_of :card_number, :card_expires_on, :address1, :city, :state, :zip_code, :first_name, :last_name
 
 
 

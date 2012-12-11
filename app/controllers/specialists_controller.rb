@@ -1,10 +1,11 @@
 class SpecialistsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :get_cart
   # GET /specialists
   # GET /specialists.json
   def index
     @specialists = Specialist.all
-
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @specialists }
@@ -25,6 +26,7 @@ class SpecialistsController < ApplicationController
   # GET /specialists/new
   # GET /specialists/new.json
   def new
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @specialist = Specialist.new
 
     respond_to do |format|
@@ -35,12 +37,16 @@ class SpecialistsController < ApplicationController
 
   # GET /specialists/1/edit
   def edit
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+
     @specialist = Specialist.find(params[:id])
   end
 
   # POST /specialists
   # POST /specialists.json
   def create
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+
     @specialist = Specialist.new(params[:specialist])
 
     respond_to do |format|
@@ -57,6 +63,8 @@ class SpecialistsController < ApplicationController
   # PUT /specialists/1
   # PUT /specialists/1.json
   def update
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+
     @specialist = Specialist.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +81,7 @@ class SpecialistsController < ApplicationController
   # DELETE /specialists/1
   # DELETE /specialists/1.json
   def destroy
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @specialist = Specialist.find(params[:id])
     @specialist.destroy
 

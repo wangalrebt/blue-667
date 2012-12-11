@@ -1,6 +1,8 @@
 <% provide :title, "New Order" %>
+<p id="notice"><%= notice %></p>
 <%= simple_form_for @order, :html => {:class => 'form-horizontal'} do |f| %>
     <%= f.error :base %>
+    <%= f.error_notification %>
 
     <% user = current_user %>
     <% if user %>
@@ -57,7 +59,7 @@
           <%= f.input :last_name %>
           <%= f.input :card_number %>
           <%= f.input :card_verification %>
-          <%= f.input :card_type %>
+          <%= f.input :card_type, :collection => ["Visa", "MasterCard", "Discover"] %>
           <%= f.input :card_expires_on, :as => :date, :order => [:month, :year], :add_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 10,  :discard_day => true %>
         </fieldset>
       </div>
@@ -95,6 +97,42 @@
             } else if ($('#order_order_type').val() == 2){
                 $('#mail_address').hide();
 
+            }
+
+        });
+
+        $('#new_order').submit(function(){
+            if($('#order_name').val()==""){
+                alert("Name cannot be empty")
+                return false;
+            }
+            if($('#order_address1').val()==""){
+                alert("Address1 can not be empty");
+                return false;
+            }
+            if($('#order_city').val()==""){
+                alert("City Can not be empty");
+                return false;
+            }
+            if($('#order_zip_code').val()==""){
+                alert("zip code can not be empty");
+                return false;
+            }
+            if($('#order_first_name').val()==""){
+                alert('first name ca not be empty');
+                return false;
+            }
+            if($('#order_last_name').val()==""){
+                alert("last name can not be empty");
+                return false;
+            }
+            if($('#order_card_type').val()==""){
+                alert("card type can not be empty");
+                return false;
+            }
+            if($('#order_card_number').val()==""){
+                alert("card number can not be empty");
+                return false;
             }
 
         });
