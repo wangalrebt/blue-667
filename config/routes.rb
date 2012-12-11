@@ -11,10 +11,10 @@ Blue::Application.routes.draw do
 
 
   authenticated :user do
-    root :to => 'products#index'
+    root :to => 'home#index'
   end
 
-  root :to => 'products#index'
+  root :to => 'home#index'
 
   devise_for :users
 
@@ -27,6 +27,8 @@ Blue::Application.routes.draw do
   resources :products
 
   get 'home/about_us'
+
+  get 'home/index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

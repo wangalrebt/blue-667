@@ -1,1 +1,35 @@
 <% provide :title, @product.name %>
+<div class="row">
+  <div class="span6">
+    <%=  cl_image_tag(@product.picture, :width => 700, :height => 600) %>
+  </div>
+  <div class="span6">
+    <h1>
+      <%= @product.name %>
+    </h1>
+    <p>
+      <%= @product.description %>
+    </p>
+    <%= button_to "Add to cart", cart_carts_products_path(:cart_id => @cart.id, :products_id => @product), :class => "btn btn-large btn-success" %>
+    <%= link_to "Continuing shopping", products_path, :class => "btn" %>
+  </div>
+</div>
+<div id="livefyre-comments"></div>
+<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<script type="text/javascript">
+    (function () {
+        var articleId = fyre.conv.load.makeArticleId(null);
+        fyre.conv.load({}, [{
+            el: 'livefyre-comments',
+            network: "livefyre.com",
+            siteId: "318506",
+            articleId: articleId,
+            signed: false,
+            collectionMeta: {
+                articleId: articleId,
+                url: fyre.conv.load.makeCollectionUrl(),
+            }
+        }], function() {});
+    }());
+</script>
+<!-- END: Livefyre Embed -->

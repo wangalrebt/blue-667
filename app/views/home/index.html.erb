@@ -1,2 +1,25 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% provide :title, "HOME" %>
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <% @products.each do |product| %>
+        <% @products.first == product ? active_class = "active item" : active_class = "item" %>
+        <div class="<%= active_class %>">
+          <%= cl_image_tag(product.picture, :width => 1500, :height => 700, :crop => :fill ) %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= product.name %></h1>
+              <p><%= product.description %></p>
+              <%= link_to "See detail", product, :class => "btn btn-primary btn-large" %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <a class="left carousel-control " href="#myCarousel" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>
+<script>
+    $(function(){
+        $('#myCarousel').carousel()
+    });
+</script>
