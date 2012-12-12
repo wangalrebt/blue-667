@@ -12,11 +12,11 @@
                 <h2 class="media-heading"><%= product.name %></h2>
                 <p>Quantity: <%= carts_product.quantity %></p>
                 <div class="media">
-                    <%= link_to 'DELETE', [@cart, carts_product], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning" %>
-                    <%= simple_form_for([@cart,carts_product], :html => {:class => "form-inline"}) do |f| %>
-                        <%= f.input :quantity, :collection => 1..5 %>
-                        <%= f.submit "update", :class => "btn" %>
-                    <% end %>
+                  <%= link_to 'DELETE', [@cart, carts_product], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning" %>
+                  <%= simple_form_for([@cart,carts_product], :html => {:class => "form-inline"}) do |f| %>
+                      <%= f.input :quantity, :collection => 1..5 %>
+                      <%= f.submit "update", :class => "btn" %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -29,15 +29,21 @@
   <div class="span4">
     <div class="well sidebar-nav" >
       <ul class="nav nav-list">
+
+
+        <li class="nav-header">Total money</li>
+        <li>
+          <%= "Total Order #{@cart.total_price}" %>
+        </li>
+        <li class="nav-header">Action</li>
         <li>
           <%= link_to 'Check OUT', new_order_path %>
         </li>
         <li>
-          <%= link_to 'Continuing Shopping', products_path %>
+          <%= link_to 'Continuing Shopping', products_path, :class => "btn-link" %>
         </li>
         <li>
-          <%= "Total Order #{@cart.total_price}" %>
-        </li>
+          <%= link_to 'Clear Cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
     </div>
 

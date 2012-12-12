@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ad71d5a-1d4f-42fb-87b1-bf89d506bfe7" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20121209014928_create_carts_products.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/carts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/specialists_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/specialists_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/orders/new.html.erb" afterPath="$PROJECT_DIR$/app/views/orders/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/carts/show.html.erb" />
     </list>
     <ignored path="blue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,37 +22,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="purchase.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script/purchase.rb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/carts/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="44" selection-start="557" selection-end="573" vertical-scroll-proportion="0.14615385">
+            <state line="45" column="97" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.8042414">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/orders/new.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/carts/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="33" selection-start="5090" selection-end="5090" vertical-scroll-proportion="-19.916666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="7" selection-end="13" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/events/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="13" selection-start="38" selection-end="68" vertical-scroll-proportion="-0.625">
+            <state line="16" column="91" selection-start="325" selection-end="408" vertical-scroll-proportion="-10.0">
               <folding />
             </state>
           </provider>
@@ -76,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/orders/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/orders/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/orders/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/events/new.html.erb" />
@@ -92,6 +68,7 @@
         <option value="$PROJECT_DIR$/app/models/order.rb" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/orders/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/carts/show.html.erb" />
       </list>
     </option>
   </component>
@@ -884,20 +861,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/specialists_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="28" selection-start="52" selection-end="88" vertical-scroll-proportion="0.023076924">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reservations_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.76153845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/carts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="52" selection-start="98" selection-end="98" vertical-scroll-proportion="0.023076924">
@@ -968,6 +931,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/orders/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="33" selection-start="5090" selection-end="5090" vertical-scroll-proportion="0.7797716">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/purchase.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="44" selection-start="557" selection-end="573" vertical-scroll-proportion="0.14615385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="13" selection-start="7" selection-end="13" vertical-scroll-proportion="-0.0">
@@ -977,21 +954,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="38" selection-end="68" vertical-scroll-proportion="-0.625">
+        <state line="1" column="13" selection-start="38" selection-end="68" vertical-scroll-proportion="0.023961661">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/orders/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/carts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="33" selection-start="5090" selection-end="5090" vertical-scroll-proportion="-19.916666">
+        <state line="16" column="91" selection-start="325" selection-end="408" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/purchase.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/carts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="44" selection-start="557" selection-end="573" vertical-scroll-proportion="0.14615385">
+        <state line="45" column="97" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.8042414">
           <folding />
         </state>
       </provider>
