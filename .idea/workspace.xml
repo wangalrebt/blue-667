@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ad71d5a-1d4f-42fb-87b1-bf89d506bfe7" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20121209014928_create_carts_products.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="blue.iws" />
@@ -44,7 +43,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="6" selection-start="889" selection-end="889" vertical-scroll-proportion="0.76677316">
+            <state line="5" column="31" selection-start="169" selection-end="169" vertical-scroll-proportion="0.11980831">
               <folding />
             </state>
           </provider>
@@ -978,7 +977,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="889" selection-end="889" vertical-scroll-proportion="0.76677316">
+        <state line="5" column="31" selection-start="169" selection-end="169" vertical-scroll-proportion="0.11980831">
           <folding />
         </state>
       </provider>
