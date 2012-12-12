@@ -1,5 +1,5 @@
 class SpecialistsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:index, :new, :edit, :create, :update, :destroy]
   before_filter :get_cart
   # GET /specialists
   # GET /specialists.json
