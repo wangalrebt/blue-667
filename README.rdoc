@@ -1,1 +1,11 @@
 http://blue-667.herokuapp.com
+
+
+################################
+test credit card
+first_name         => 'Bob',
+last_name          => 'Bobsen',
+number             => '4111111111111111',
+month              => '8',
+year               => '2013',
+verification_value => '123'
