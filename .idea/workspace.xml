@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ad71d5a-1d4f-42fb-87b1-bf89d506bfe7" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20121209014928_create_carts_products.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="blue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +33,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="20" selection-start="158" selection-end="158" vertical-scroll-proportion="0.11980831">
+            <state line="5" column="20" selection-start="158" selection-end="158" vertical-scroll-proportion="0.115207374">
               <folding />
             </state>
           </provider>
@@ -471,12 +470,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="JavaScript.Libraries" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pink/app" />
-    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -744,12 +743,12 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: blue" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: blue" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.creditcard" />
-      <item index="5" class="java.lang.String" itemvalue="Ruby.purchase" />
+      <item index="0" class="java.lang.String" itemvalue="Ruby.creditcard" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.purchase" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Production: blue" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Development: blue" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -787,7 +786,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -863,100 +862,72 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/events/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="67" selection-end="67" vertical-scroll-proportion="0.095846646">
-          <folding />
-        </state>
+        <state line="4" column="25" selection-start="67" selection-end="67" vertical-scroll-proportion="0.095846646" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="35" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="26" column="35" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/orders_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="50" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.76153845">
-          <folding />
-        </state>
+        <state line="70" column="50" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.76153845" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/orders/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="33" selection-start="5090" selection-end="5090" vertical-scroll-proportion="0.7797716">
-          <folding />
-        </state>
+        <state line="129" column="33" selection-start="5090" selection-end="5090" vertical-scroll-proportion="0.7797716" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="7" selection-end="13" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
+        <state line="0" column="13" selection-start="7" selection-end="13" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="38" selection-end="68" vertical-scroll-proportion="0.023961661">
-          <folding />
-        </state>
+        <state line="1" column="13" selection-start="38" selection-end="68" vertical-scroll-proportion="0.023961661" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/carts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="91" selection-start="325" selection-end="408" vertical-scroll-proportion="0.38338658">
-          <folding />
-        </state>
+        <state line="16" column="91" selection-start="325" selection-end="408" vertical-scroll-proportion="0.38338658" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/carts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="97" selection-start="1736" selection-end="1736" vertical-scroll-proportion="-28.125">
-          <folding />
-        </state>
+        <state line="45" column="97" selection-start="1736" selection-end="1736" vertical-scroll-proportion="-28.125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/specialists_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="94" selection-start="146" selection-end="146" vertical-scroll-proportion="0.023076924">
-          <folding />
-        </state>
+        <state line="1" column="94" selection-start="146" selection-end="146" vertical-scroll-proportion="0.023076924" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="18" selection-end="85" vertical-scroll-proportion="0.047923323">
-          <folding />
-        </state>
+        <state line="2" column="7" selection-start="18" selection-end="85" vertical-scroll-proportion="0.047923323" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="7" selection-start="724" selection-end="724" vertical-scroll-proportion="0.52715653">
-          <folding />
-        </state>
+        <state line="22" column="7" selection-start="724" selection-end="724" vertical-scroll-proportion="0.52715653" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="874" selection-end="874" vertical-scroll-proportion="0.47923324">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="874" selection-end="874" vertical-scroll-proportion="0.47923324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/purchase.rb">
@@ -968,7 +939,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="158" selection-end="158" vertical-scroll-proportion="0.11980831">
+        <state line="5" column="20" selection-start="158" selection-end="158" vertical-scroll-proportion="0.115207374">
           <folding />
         </state>
       </provider>
