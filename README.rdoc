@@ -1,1 +1,1 @@
-<a href="http://blue-667.herokuapp.com/">http://blue-667.herokuapp.com/</a>
+http://blue-667.herokuapp.com
