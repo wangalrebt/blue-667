@@ -11,5 +11,13 @@
         <% end %>
     <% end %>
     <li class="nav-header">My Address</li>
+    <li class="nav-header">My Reservation</li>
+    <% if @user.reservations %>
+        <% reservations = @user.reservations %>
+        <% reservations.each do |reservation| %>
+            <li><%= link_to 'My reservation', reservation %></li>
+        <% end %>
+    <% end %>
+
   </ul>
 </div>
