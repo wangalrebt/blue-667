@@ -7,16 +7,25 @@
 <%= link_to 'blue-667', root_path, :class => "brand" %>
 <div class="nav-collapse collapse" >
   <ul class="nav">
-    <li><%= link_to 'SHOPPING', products_path %></li>
+    <li class="<%= 'active' if current_page?(products_path) %>">
+      <%= link_to 'SHOPPING', products_path %>
+    </li>
     <% if @cart %>
-        <li><%= link_to 'SHOPPING CART', cart_path(@cart) %></li>
+      <li class="<%= 'active' if current_page?(cart_path(@cart)) %>">
+        <%= link_to 'SHOPPING CART', cart_path(@cart) %>
+      </li>
     <% end %>
     <% if user_signed_in? %>
-        <li><%= link_to 'NEW EVENT', new_event_path %></li>
+      <li class="<%= 'active' if current_page?(new_event_path) %>">
+        <%= link_to 'NEW EVENT', new_event_path %>
+      </li>
     <% end %>
-    <li><%= link_to 'RESERVATION', new_reservation_path %></li>
-    <li><%= link_to 'ABOUT US', '/home/about_us' %></li>
-    <li><%= link_to 'TODAY SPECIALIST', specialist_path(1) %></li>
+    <li class="<%= 'active' if current_page?(new_reservation_path) %>">
+      <%= link_to 'RESERVATION', new_reservation_path %>
+    </li>
+    <li class="<%= 'active' if current_page?(specialist_path(1)) %>">
+      <%= link_to 'TODAY SPECIALIST', specialist_path(1) %>
+    </li>
   </ul>
   <ul class="nav nav-tabs pull-right">
     <% if user_signed_in? %>
@@ -29,19 +38,19 @@
         </li>
     <% end %>
     <% if user_signed_in? %>
-        <li>
+        <li class="<%= 'active' if current_page?(edit_user_registration_path) %>">
           <%= link_to('Edit account', edit_user_registration_path) %>
         </li>
-        <li>
+        <li class="<%= 'active' if current_page?(current_user) %>">
           <%= link_to 'MY ACCOUNT', current_user %>
         </li>
         <% if current_user.has_role? :admin %>
-            <li>
+            <li class="<%= 'active' if current_page?(users_path) %>">
               <%= link_to('Admin', users_path) %>
             </li>
         <% end %>
     <% else %>
-        <li>
+        <li class="<%= 'active' if current_page?(new_user_registration_path) %>">
           <%= link_to('Sign up', new_user_registration_path)  %>
         </li>
     <% end %>
