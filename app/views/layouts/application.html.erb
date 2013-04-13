@@ -20,19 +20,19 @@
     </div>
   </nav>
 </header>
-<div id="main" role="main" style="min-height: 100%; height: auto !important; height: 100%;">
+<div id="wrap" role="main" >
   <div class="container">
     <div class="content">
       <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
   </div>
-  <footer id="footer">
-    <div class="container">
-      <p class="muted credit">Powered by <a href="https://github.com/wangalrebt/blue-667">Wang</a>
-      <p><%= link_to 'About Us', home_about_us_path %>
-    </div>
-  </footer>
 </div>
+<footer id="footer">
+  <div class="container">
+    <p class="muted credit">Powered by <a href="https://github.com/wangalrebt/blue-667">Wang</a>
+    <p><%= link_to 'About Us', home_about_us_path %>
+  </div>
+</footer>
 </body>
 </html>
