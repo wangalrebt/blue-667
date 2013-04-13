@@ -1,42 +1,49 @@
-
-<ul class="nav">
-  <li><%= link_to 'blue-667', root_path, :class => "brand" %></li>
-  <li><%= link_to 'SHOPPING', products_path %></li>
-  <% if @cart %>
-      <li><%= link_to 'SHOPPING CART', cart_path(@cart) %></li>
-  <% end %>
-  <% if user_signed_in? %>
-      <li><%= link_to 'NEW EVENT', new_event_path %></li>
-  <% end %>
-  <li><%= link_to 'RESERVATION', new_reservation_path %></li>
-  <li><%= link_to 'ABOUT US', '/home/about_us' %></li>
-  <li><%= link_to 'TODAY SPECIALIST', specialist_path(1) %></li>
-</ul>
-<ul class="nav nav-tabs pull-right">
-  <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
-      </li>
-  <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path)  %>
-      </li>
-  <% end %>
-  <% if user_signed_in? %>
-      <li>
-        <%= link_to('Edit account', edit_user_registration_path) %>
-      </li>
-      <li>
-        <%= link_to 'MY ACCOUNT', current_user %>
-      </li>
-      <% if current_user.has_role? :admin %>
-          <li>
-            <%= link_to('Admin', users_path) %>
-          </li>
-      <% end %>
-  <% else %>
-      <li>
-        <%= link_to('Sign up', new_user_registration_path)  %>
-      </li>
-  <% end %>
-</ul>
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</a>
+<%= link_to 'blue-667', root_path, :class => "brand" %>
+<div class="nav-collapse collapse" >
+  <ul class="nav">
+    <li><%= link_to 'SHOPPING', products_path %></li>
+    <% if @cart %>
+        <li><%= link_to 'SHOPPING CART', cart_path(@cart) %></li>
+    <% end %>
+    <% if user_signed_in? %>
+        <li><%= link_to 'NEW EVENT', new_event_path %></li>
+    <% end %>
+    <li><%= link_to 'RESERVATION', new_reservation_path %></li>
+    <li><%= link_to 'ABOUT US', '/home/about_us' %></li>
+    <li><%= link_to 'TODAY SPECIALIST', specialist_path(1) %></li>
+  </ul>
+  <ul class="nav nav-tabs pull-right">
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path)  %>
+        </li>
+    <% end %>
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to('Edit account', edit_user_registration_path) %>
+        </li>
+        <li>
+          <%= link_to 'MY ACCOUNT', current_user %>
+        </li>
+        <% if current_user.has_role? :admin %>
+            <li>
+              <%= link_to('Admin', users_path) %>
+            </li>
+        <% end %>
+    <% else %>
+        <li>
+          <%= link_to('Sign up', new_user_registration_path)  %>
+        </li>
+    <% end %>
+  </ul>
+</div>
