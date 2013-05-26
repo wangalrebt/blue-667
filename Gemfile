@@ -21,6 +21,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "capybara", :group => :test
+gem 'rspec-rails', '>= 2.12.2', :group => [:development, :test]
+gem 'database_cleaner', '>= 0.9.1', :group => :test
+gem 'factory_girl_rails', :group => [:development, :test]
+gem 'email_spec', '>= 1.4.0', :group => :test
+gem 'cucumber-rails', '>= 1.3.0', :group => :test, :require => false
 gem 'jquery-rails'
 gem 'thin'
 gem 'bootstrap-sass'
