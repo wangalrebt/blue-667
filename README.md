@@ -16,9 +16,7 @@ Run rspec tests with:
 
     bundle exec rspec
     
-Run Cucumber features with:
 
-    bundle exec cucumber
 
 
 
