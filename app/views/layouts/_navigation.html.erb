@@ -6,7 +6,9 @@
 </a>
 <div class="nav-collapse collapse" >
   <ul class="nav">
-    <li><%= link_to 'HOME', root_path, :class => "brand" %></li>
+    <li class="<%= 'active' if current_page?(root_path) %>">
+      <%= link_to 'HOME', root_path %>
+    </li>
     <li class="<%= 'active' if current_page?(products_path) %>">
       <%= link_to 'SHOPPING', products_path %>
     </li>
