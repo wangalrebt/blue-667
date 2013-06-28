@@ -4,9 +4,9 @@
   <span class="icon-bar"></span>
   <span class="icon-bar"></span>
 </a>
-<%= link_to 'blue-667', root_path, :class => "brand" %>
 <div class="nav-collapse collapse" >
   <ul class="nav">
+    <li><%= link_to 'HOME', root_path, :class => "brand" %></li>
     <li class="<%= 'active' if current_page?(products_path) %>">
       <%= link_to 'SHOPPING', products_path %>
     </li>
@@ -22,9 +22,6 @@
     <% end %>
     <li class="<%= 'active' if current_page?(new_reservation_path) %>">
       <%= link_to 'RESERVATION', new_reservation_path %>
-    </li>
-    <li class="<%= 'active' if current_page?(specialist_path(1)) %>">
-      <%= link_to 'TODAY SPECIALIST', specialist_path(1) %>
     </li>
   </ul>
   <ul class="nav nav-tabs pull-right">

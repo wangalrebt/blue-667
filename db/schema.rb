@@ -20,21 +20,6 @@ ActiveRecord::Schema.define(:version => 20121211222210) do
     t.boolean  "completed",  :default => false
   end
 
-  create_table "carts_products", :force => true do |t|
-    t.integer  "cart_id"
-    t.integer  "quantity",   :default => 1
-    t.integer  "product_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  create_table "events", :force => true do |t|
-    t.string  "name",        :limit => 32
-    t.string  "requirement"
-    t.integer "order_id"
-    t.integer "user_id"
-  end
-
   create_table "order_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -44,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20121211222210) do
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.integer  "cart_id"
-    t.integer  "order_type_id"
+    t.integer  "order_type"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.boolean  "completed",       :default => false
